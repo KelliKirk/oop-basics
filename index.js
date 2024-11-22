@@ -5,9 +5,9 @@ const School = require('./classes/school');
 
 const school = new School("Awesome School")
 const student1 = new Student("John Smith")
-student1.setDateOfBirth(1995)
+student1.setDateOfBirth(2008)
 const student2 = new Student("Mary Lee")
-student2.setDateOfBirth(2000)
+student2.setDateOfBirth(2009)
 
 school.addStudent(student1)
 school.addStudent(student2)

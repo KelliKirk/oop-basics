@@ -58,6 +58,15 @@ class Student extends Person {
     getGrades() {
         return this.grades;
     }
+    
+    // Parandatud addGrade meetod: lisame kursuse ja hinde objekti
+    addGrade(course, grade) { 
+        const newGrade = {
+            course: course,
+            grade: grade
+        }
+        this.grades.push(newGrade);  // Lisame hinde koos kursusega
+    }
 
     // Arvutab õpilase keskmise hinde
     getAverageGrade() {

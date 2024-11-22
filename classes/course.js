@@ -9,13 +9,18 @@ class Course {
         this.grades.push({ student: student, grade: grade });
     }
 
+    // Funktsioon, mis lisab õpilase hinde kursusele
+    addGrade(student, grade) {
+        this.grades.set(student, grade);
+    }
+
     // Tagastab õpilaste hinded (massiiv objektidega)
     getGrades() {
         return this.grades;
     }
 
     // Arvutab kursuse keskmise hinde
-    getAverageGrade() {
+    getAverageGrade() { // Parandatud siin
         if (this.grades.length === 0) {
             return -1;  // Kui hindeid pole, tagastame -1
         }
@@ -80,5 +85,4 @@ console.log(courseMath.getGrades());  // [{ student: Student { name: 'Jane Doe' 
 
 // Kuvame kursuse keskmise hinde
 console.log(courseMath.getAverageGrade());  // 4.166666666666667
-
 module.exports = Course;
