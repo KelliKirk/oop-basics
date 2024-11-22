@@ -59,7 +59,7 @@ class Student extends Person {
         return this.grades;
     }
     
-    // Parandatud addGrade meetod: lisame kursuse ja hinde objekti
+    // Lisab õpilasele hinde koos kursusega
     addGrade(course, grade) { 
         const newGrade = {
             course: course,
@@ -69,17 +69,17 @@ class Student extends Person {
     }
 
     // Arvutab õpilase keskmise hinde
-    getAverageGrade() {
+    calculateAverageGrade() {
         if (this.grades.length === 0) {
             return -1;  // Kui hindeid pole, tagastame -1
         }
         const total = this.grades.reduce((sum, gradeObj) => sum + gradeObj.grade, 0);
-        return total / this.grades.length;
+        return total / this.grades.length;  // Arvutame keskmise hinde
     }
 
     // Tagastab õpilase nime koos selgitava tekstiga
     description() {
-        return `${this.name} on õpilane, tema keskmine hinne on ${this.getAverageGrade() === -1 ? 'pole hindeid' : this.getAverageGrade()}.`;
+        return `${this.name} on õpilane, tema keskmine hinne on ${this.calculateAverageGrade() === -1 ? 'pole hindeid' : this.calculateAverageGrade()}.`;
     }
 }
 
@@ -91,10 +91,14 @@ const student = new Student('Jane Doe');
 // Määrame õpilasele ID
 student.setId(12345);
 
+// Lisame õpilasele hindeid
+student.addGrade('Mathematics', 4.5);
+student.addGrade('Physics', 3.8);
+
 // Kuvame õpilase info
 console.log(student.getId());  // 12345
 console.log(student.getGrades());  // Hinded massiiv
-console.log(student.getAverageGrade());  // Keskmine hinne (nt 4.15)
+console.log(student.calculateAverageGrade());  // Keskmine hinne (nt 4.15)
 console.log(student.description());  // Jane Doe on õpilane, tema keskmine hinne on 4.15
 
 module.exports = Student;
