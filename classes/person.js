@@ -47,3 +47,5 @@ console.log(person.getName());  // John Doe
 console.log(person.getDateOfBirth());  // 1990
 console.log(person.age());  // Arvutatud vanus (nt 34)
 console.log(person.description());  // "John Doe on 34 aastat vana."
+
+module.exports = Person;

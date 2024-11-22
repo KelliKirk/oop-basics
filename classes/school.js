@@ -143,3 +143,5 @@ console.log(school.getCourses().length); // 2
 
 school.addStudentGrade(student1, course1, 4);
 school.addStudentGrade(student1, course2, 5);
+
+module.exports = School;

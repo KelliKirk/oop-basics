@@ -87,3 +87,5 @@ console.log(student.getId());  // 12345
 console.log(student.getGrades());  // Hinded massiiv
 console.log(student.getAverageGrade());  // Keskmine hinne (nt 4.15)
 console.log(student.description());  // Jane Doe on õpilane, tema keskmine hinne on 4.15
+
+module.exports = Student;
