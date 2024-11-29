@@ -74,6 +74,5 @@ class School {
             return bAverage - aAverage; // Järjestame kahanevalt
         });
     }
-}
-
+} 
 module.exports = School; // Eksportime School klassi

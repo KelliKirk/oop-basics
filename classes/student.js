@@ -54,5 +54,5 @@ class Student extends Person {
         return `${this.name} on õpilane, tema keskmine hinne on ${this.calculateAverageGrade() === -1 ? 'pole hindeid' : this.calculateAverageGrade()}.`;
     }
 }
-
-  module.exports = Student;
+ 
+  module.exports = Student; 

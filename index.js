@@ -71,4 +71,3 @@ school.getCourses().forEach((course) => {
 
 
 
-

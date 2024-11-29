@@ -81,4 +81,4 @@ console.log(courseMath.getGrades());  // [{ student: Student { name: 'Jane Doe' 
 // Kuvame kursuse keskmise hinde
 console.log(courseMath.getAverageGrade());  // 4.166666666666667
 
-module.exports = Course;
+module.exports = Course; 
