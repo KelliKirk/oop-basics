@@ -1,40 +1,5 @@
-class Person {
-    constructor(name) {
-        this.name = name;  // Inimese nimi
-        this.dateOfBirth = null;  // Alguses pole sünniaastat määratud
-    }
+const Person = require("./person");
 
-    // Määrab inimese sünniaasta
-    setDateOfBirth(year) {
-        this.dateOfBirth = year;
-    }
-
-    // Tagastab inimese sünniaasta
-    getDateOfBirth() {
-        return this.dateOfBirth;
-    }
-
-    // Arvutab inimese vanuse hetkeseisuga
-    age() {
-        if (this.dateOfBirth === null) {
-            return 'Sünniaasta pole määratud';
-        }
-        const currentYear = new Date().getFullYear();  // Saame praeguse aasta
-        return currentYear - this.dateOfBirth;  // Arvutame vanuse
-    }
-
-    // Tagastab inimese nime
-    getName() {
-        return this.name;
-    }
-
-    // Tagastab objekti sõnekuju
-    description() {
-        return `${this.name} on ${this.age()} aastat vana.`;
-    }
-}
-
-// Student klass, mis laiendab Person klassi
 class Student extends Person {
     constructor(name) {
         super(name);  // Kutsume ülemklassi konstruktorit
@@ -58,7 +23,14 @@ class Student extends Person {
     getGrades() {
         return this.grades;
     }
-    
+
+    // Tagastab keskmise hinde
+    getAverageGrade() {
+        if (this.grades.length === 0) return 0; // Kui hindeid pole, tagasta 0
+        const total = this.grades.reduce((sum, grade) => sum + grade, 0); // Summa
+        return total / this.grades.length; // Keskmine
+    }
+
     // Lisab õpilasele hinde koos kursusega
     addGrade(course, grade) { 
         const newGrade = {
@@ -83,22 +55,4 @@ class Student extends Person {
     }
 }
 
-// Kasutamine:
-
-// Loome õpilase objekti
-const student = new Student('Jane Doe');
-
-// Määrame õpilasele ID
-student.setId(12345);
-
-// Lisame õpilasele hindeid
-student.addGrade('Mathematics', 4.5);
-student.addGrade('Physics', 3.8);
-
-// Kuvame õpilase info
-console.log(student.getId());  // 12345
-console.log(student.getGrades());  // Hinded massiiv
-console.log(student.calculateAverageGrade());  // Keskmine hinne (nt 4.15)
-console.log(student.description());  // Jane Doe on õpilane, tema keskmine hinne on 4.15
-
-module.exports = Student;
+  module.exports = Student;
